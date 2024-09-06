@@ -2,6 +2,10 @@ const fetch = require('node-fetch');
 const token = process.env.GITHUB_TOKEN;
 const apiUrl = 'https://api.github.com/graphql';
 
+// for Vercel backend Web Analytics
+import { inject } from '@vercel/analytics';
+inject();
+
 module.exports = async (req, res) => {
   const owner = process.env.GITHUB_REPO_OWNER;
   const repoName = process.env.GITHUB_REPO_NAME;
